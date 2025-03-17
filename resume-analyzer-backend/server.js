@@ -14,7 +14,7 @@ const app = express();
 // Configure CORS to allow requests from your frontend
 app.use(
     cors({
-      origin: "https://genairesume.vercel.app/", // Update if your frontend is hosted elsewhere
+      origin: "*", // Update if your frontend is hosted elsewhere
       credentials: true, // Allow cookies to be sent
     })
   );
