@@ -16,7 +16,7 @@ const UploadResume = () => {
     formData.append("resume", fileInput.files[0]);
 
     try {
-      const response = await fetch("http://localhost:5000/api/resume/upload", {
+      const response = await fetch("https://resume-analyser-589433582692.us-central1.run.app/api/resume/upload", {
         method: "POST",
         credentials: "include", // include cookies for session persistence
         body: formData,

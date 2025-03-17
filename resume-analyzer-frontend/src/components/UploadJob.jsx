@@ -14,7 +14,7 @@ const UploadJob = () => {
       return;
     }
     try {
-      const response = await fetch("http://localhost:5000/api/job/upload-text", {
+      const response = await fetch("https://resume-analyser-589433582692.us-central1.run.app/api/job/upload-text", {
         method: "POST",
         credentials: "include", // send cookies for session
         headers: { "Content-Type": "application/json" },
@@ -45,7 +45,7 @@ const UploadJob = () => {
     formData.append("jobFile", fileInput.files[0]);
 
     try {
-      const response = await fetch("http://localhost:5000/api/job/upload-file", {
+      const response = await fetch("https://resume-analyser-589433582692.us-central1.run.app/api/job/upload-file", {
         method: "POST",
         credentials: "include", // ensure cookies are sent
         body: formData,

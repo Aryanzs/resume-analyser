@@ -10,7 +10,7 @@ const CompareAnalysis = () => {
     setLoading(true);
     setError("");
     try {
-      const response = await fetch("http://localhost:5000/api/compare", {
+      const response = await fetch("https://resume-analyser-589433582692.us-central1.run.app/api/compare", {
         method: "POST",
         credentials: "include", // include cookies so session data is available
       });
