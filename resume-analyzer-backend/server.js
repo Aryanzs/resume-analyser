@@ -37,5 +37,5 @@ app.use("/api/resume", resumeRoutes);
 app.use("/api/job", jobRoutes);
 app.use("/api/compare", compareRoutes);
 
-const PORT = process.env.PORT || 5000;
+const PORT = 8080;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
