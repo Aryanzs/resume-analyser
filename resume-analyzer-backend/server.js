@@ -12,12 +12,26 @@ const compareRoutes = require("./routes/compareRoutes");
 const app = express();
 
 // Configure CORS to allow requests from your frontend
+// Define allowed origins dynamically from environment variables
+const allowedOrigins = [
+  "http://localhost:5173",  // For local development
+  "https://genairesume.vercel.app", // Your deployed frontend
+];
+
 app.use(
-    cors({
-      origin: "*", // Update if your frontend is hosted elsewhere
-      credentials: true, // Allow cookies to be sent
-    })
-  );
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, origin);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true, // Allow cookies and session data
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
 // Parse JSON and URL-encoded data
 app.use(express.json());

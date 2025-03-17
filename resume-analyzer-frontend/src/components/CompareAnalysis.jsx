@@ -12,7 +12,7 @@ const CompareAnalysis = () => {
     try {
       const response = await fetch("https://resume-analyser-589433582692.us-central1.run.app/api/compare", {
         method: "POST",
-        credentials: "include", // include cookies so session data is available
+        // credentials: "include", // include cookies so session data is available
       });
       const data = await response.json();
       if (data.success) {

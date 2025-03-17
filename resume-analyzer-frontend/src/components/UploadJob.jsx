@@ -16,7 +16,7 @@ const UploadJob = () => {
     try {
       const response = await fetch("https://resume-analyser-589433582692.us-central1.run.app/api/job/upload-text", {
         method: "POST",
-        credentials: "include", // send cookies for session
+        // credentials: "include", // send cookies for session
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ jobDescription: text }),
       });
